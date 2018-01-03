@@ -28,24 +28,24 @@ node {
         }
     }
 
-    stage('Input Required Info'){
+    stage('Input Required Info') {
 
         def inputParams = input(message: 'Required Info',
-                            parameters: [
-                                    [$class: 'StringParameterDefinition',defaultValue: '', description: '', name: 'Project Name'],
-                                    [$class: 'StringParameterDefinition',defaultValue: '', description: '', name: 'Topic Name']
-                            ])
+                parameters: [
+                        [$class: 'StringParameterDefinition', defaultValue: '', description: '', name: 'Project Name'],
+                        [$class: 'StringParameterDefinition', defaultValue: '', description: '', name: 'Topic Name']
+                ])
 
         project = inputParams['Project Name']
         topic = inputParams['Topic Name']
 
-        echo("Project is : "+ project )
-        echo("Topic is : "+ topic)
+        echo("Project is : " + project)
+        echo("Topic is : " + topic)
     }
 
-//    stage("Execute Pubsub Stream") {
-//        dir("${tempDir}/${currentProject}") {
-//            sh("${mvnHome}/bin/mvn -Dtest=PublisherDemo#testArgLine -DargLine=\"-Dproject=fcr-it -Dtopic=BBB\" test")
-//        }
-//    }
+    stage("Execute Pubsub Stream") {
+        dir("${tempDir}/${currentProject}") {
+            sh("${mvnHome}/bin/mvn -Dtest=PublisherDemo#testArgLine -DargLine=\"-Dproject=${project} -Dtopic=${topic}\" test")
+        }
+    }
 }
