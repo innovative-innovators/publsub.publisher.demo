@@ -36,8 +36,8 @@ node {
                                     [$class: 'StringParameterDefinition',defaultValue: '', description: '', name: 'Topic Name']
                             ])
 
-        project = inputParams['project']
-        topic = inputParams['topic']
+        project = inputParams['Project Name']
+        topic = inputParams['Topic Name']
 
         echo("Project is : "+ project )
         echo("Topic is : "+ topic)
