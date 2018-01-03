@@ -3,7 +3,6 @@ node {
     def JAVA_HOME
     def tempDir = "/VWMC/TempWorkDir"
     def currentProject = "publsub.publisher.demo"
-    def inputParams
     def project
     def topic
 
@@ -31,7 +30,11 @@ node {
 
     stage('Input Required Info'){
 
-        inputParams = input(message: 'Required Info', parameters: [string(defaultValue: '', description: '', name: 'Project Name'), string(defaultValue: '', description: '', name: 'Topic Name')])
+        def inputParams = input(message: 'Required Info',
+                            parameters: [
+                                    [$class: 'TextParameterDefinition',defaultValue: '', description: '', name: 'Project Name'],
+                                    [$class: 'TextParameterDefinition',defaultValue: '', description: '', name: 'Topic Name']
+                            ])
 
         project = inputParams['project']
         topic = inputParams['topic']
