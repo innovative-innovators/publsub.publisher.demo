@@ -32,8 +32,8 @@ node {
 
         def inputParams = input(message: 'Required Info',
                             parameters: [
-                                    [$class: 'TextParameterDefinition',defaultValue: '', description: '', name: 'Project Name'],
-                                    [$class: 'TextParameterDefinition',defaultValue: '', description: '', name: 'Topic Name']
+                                    [$class: 'StringParameterDefinition',defaultValue: '', description: '', name: 'Project Name'],
+                                    [$class: 'StringParameterDefinition',defaultValue: '', description: '', name: 'Topic Name']
                             ])
 
         project = inputParams['project']
