@@ -45,7 +45,7 @@ node {
 
     stage("Execute Pubsub Stream") {
         dir("${tempDir}/${currentProject}") {
-            sh("${mvnHome}/bin/mvn -Dtest=PublisherDemo#testArgLine -DargLine=\"-Dproject=${project} -Dtopic=${topic}\" test")
+            sh("${mvnHome}/bin/mvn -Dtest=PublisherDemo#testSingleMessagePublish -DargLine=\"-Dproject=${project} -Dtopic=${topic}\" test")
         }
     }
 }
