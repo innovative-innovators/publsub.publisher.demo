@@ -42,7 +42,7 @@ public class PublisherDemo {
             // Create publisher with default setting & bound to topic
             publisher = Publisher.newBuilder(topicName).build();
 
-            for (int i = 0; i < 2; i++) {
+            for (int i = 0; i < 10; i++) {
 
                 String message = i + "-" + UUID.randomUUID().toString();
 
@@ -52,8 +52,6 @@ public class PublisherDemo {
                 // Once published, return a server-assigned msg id
                 ApiFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
                 messageIdFutures.add(messageIdFuture);
-
-                Thread.sleep(10000);
 
             }
 

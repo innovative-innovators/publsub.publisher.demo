@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <jetty.alpnAgent.version>2.0.0</jetty.alpnAgent.version>
+        <jetty.alpnAgent.version>2.0.6</jetty.alpnAgent.version>
         <jetty.alpnAgent.path>
             ${settings.localRepository}/org/mortbay/jetty/alpn/jetty-alpn-agent/${jetty.alpnAgent.version}/jetty-alpn-agent-${jetty.alpnAgent.version}.jar
         </jetty.alpnAgent.path>
@@ -35,33 +35,6 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-
-            <!--<plugin>-->
-            <!--<groupId>org.xolstice.maven.plugins</groupId>-->
-            <!--<artifactId>protobuf-maven-plugin</artifactId>-->
-            <!--<version>0.5.0</version>-->
-            <!--<configuration>-->
-            <!--<protocArtifact>com.google.protobuf:protoc:3.5.0:exe:${os.detected.classifier}</protocArtifact>-->
-            <!--<pluginId>grpc-java</pluginId>-->
-            <!--<pluginArtifact>io.grpc:protoc-gen-grpc-java:1.8.0:exe:${os.detected.classifier}</pluginArtifact>-->
-            <!--</configuration>-->
-            <!--<executions>-->
-            <!--<execution>-->
-            <!--<goals>-->
-            <!--<goal>compile</goal>-->
-            <!--<goal>compile-custom</goal>-->
-            <!--</goals>-->
-            <!--</execution>-->
-            <!--</executions>-->
-            <!--</plugin>-->
-
-            <!--<plugin>-->
-            <!--<artifactId>maven-surefire-plugin</artifactId>-->
-            <!--<version>2.20.1</version>-->
-            <!--<configuration>-->
-            <!--<argLine>-javaagent:${jetty.alpnAgent.path}</argLine>-->
-            <!--</configuration>-->
-            <!--</plugin>-->
 
             <plugin>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -124,12 +97,6 @@
             <groupId>com.google.cloud</groupId>
             <artifactId>google-cloud-pubsub</artifactId>
             <version>0.32.0-beta</version>
-            <exclusions>
-                <!--<exclusion>-->
-                    <!--<groupId>io.netty</groupId>-->
-                    <!--<artifactId>netty-handler-proxy</artifactId>-->
-                <!--</exclusion>-->
-            </exclusions>
         </dependency>
 
         <!-- for running mvn -Dtest=xxx -DargLine="-Dxxx=xxx -Dxxx=xxx"-->
@@ -186,18 +153,6 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
-        <!--<dependency>-->
-            <!--<groupId>io.netty</groupId>-->
-            <!--<artifactId>netty-handler</artifactId>-->
-            <!--<version>4.1.19.Final</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>io.netty</groupId>-->
-            <!--<artifactId>netty-handler-proxy</artifactId>-->
-            <!--<version>4.1.19.Final</version>-->
-        <!--</dependency>-->
-
 
     </dependencies>
 

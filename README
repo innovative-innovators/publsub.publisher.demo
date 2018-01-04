@@ -1,2 +1,3 @@
 # ~ must be FULL PATH
-mvn -Dtest=PublisherDemo#testSingleMessagePublish -DargLine="-Dproject=fcr-it -Dtopic=vc_fraud_topic -javaagent:~/.m2/repository/org/mortbay/jetty/alpn/jetty-alpn-agent/2.0.0/jetty-alpn-agent-2.0.0.jar -Xmx2048m -XX:MaxPermSize=512m" test
+mvn -Dtest=PublisherDemo#testSingleMessagePublish -DargLine="-Dproject=<project> -Dtopic=<topic> -javaagent:~/.m2/repository/org/mortbay/jetty/alpn/jetty-alpn-agent/2.0.6/jetty-alpn-agent-2.0.6.jar -Xmx2048m -XX:MaxPermSize=512m" test
+mvn -Dtest=PublisherDemo#testSingleMessagePublish -DargLine="-Dproject=<project> -Dtopic=<topic> -javaagent:<ABSOLUTE_PATH>/.m2/repository/org/mortbay/jetty/alpn/jetty-alpn-agent/2.0.6/jetty-alpn-agent-2.0.6.jar -Xmx2048m" test
