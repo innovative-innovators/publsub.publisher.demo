@@ -45,7 +45,8 @@ node {
 
     stage("Execute Pubsub Stream") {
         dir("${tempDir}/${currentProject}") {
-            sh("${mvnHome}/bin/mvn -Dtest=PublisherDemo#testSingleMessagePublish -DargLine=\"-Dproject=${project} -Dtopic=${topic}\" test")
+//            sh("${mvnHome}/bin/mvn -Dtest=PublisherDemo#testSingleMessagePublish -DargLine=\"-Dproject=${project} -Dtopic=${topic}\" test")
+            sh("${mvnHome}/bin/mvn -Dtest=PublisherDemo#testSingleMessagePublish -DargLine=\"-Dproject=fcr-it -Dtopic=vc_fraud_topic -javaagent:/home/vincent_chen/.m2/repository/org/mortbay/jetty/alpn/jetty-alpn-agent/2.0.6/jetty-alpn-agent-2.0.6.jar -Xmx2048m\" test")
         }
     }
 }
