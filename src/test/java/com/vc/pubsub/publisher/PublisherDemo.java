@@ -30,6 +30,9 @@ public class PublisherDemo {
 
         logger.info("***** TestSingleMessagePublish Starts  ***** ");
 
+        logger.info("Project is : " + project);
+        logger.info("Topic is : " + topic);
+
         TopicName topicName = TopicName.of(project, topic);
         Publisher publisher = null;
         List<ApiFuture<String>> messageIdFutures = new ArrayList<>();
@@ -39,7 +42,7 @@ public class PublisherDemo {
             // Create publisher with default setting & bound to topic
             publisher = Publisher.newBuilder(topicName).build();
 
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 2; i++) {
 
                 String message = i + "-" + UUID.randomUUID().toString();
 
@@ -49,6 +52,8 @@ public class PublisherDemo {
                 // Once published, return a server-assigned msg id
                 ApiFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
                 messageIdFutures.add(messageIdFuture);
+
+                Thread.sleep(10000);
 
             }
 

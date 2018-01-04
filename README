@@ -1,1 +1,2 @@
-mvn -Dtest=PublisherDemo#testArgLine -DargLine="-Dproject=AAA -Dtopic=BBB" test
+# ~ must be FULL PATH
+mvn -Dtest=PublisherDemo#testSingleMessagePublish -DargLine="-Dproject=fcr-it -Dtopic=vc_fraud_topic -javaagent:~/.m2/repository/org/mortbay/jetty/alpn/jetty-alpn-agent/2.0.0/jetty-alpn-agent-2.0.0.jar -Xmx2048m -XX:MaxPermSize=512m" test

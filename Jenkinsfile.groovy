@@ -2,7 +2,7 @@ node {
     def mvnHome
     def JAVA_HOME
     def tempDir = "/VWMC/TempWorkDir"
-    def currentProject = "publsub.publisher.demo"
+    def currentProject = "pubsub.publisher.demo"
     def project
     def topic
 
@@ -18,7 +18,7 @@ node {
         sh("mkdir ${tempDir}/${currentProject}")
 
         dir("${tempDir}/${currentProject}") {
-            git 'https://github.com/innovative-innovators/publsub.publisher.demo.git'
+            git 'https://github.com/innovative-innovators/pubsub.publisher.demo.git'
         }
     }
 
