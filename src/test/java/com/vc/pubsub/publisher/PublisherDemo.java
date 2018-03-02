@@ -47,7 +47,7 @@ public class PublisherDemo {
                 String message = i + "-" + UUID.randomUUID().toString();
 
                 // Publish message to Pubsub
-                PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(ByteString.copyFromUtf8(message)).build();
+                PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(ByteString.copyFromUtf8(message)).setMessageId(String.valueOf(i)).build();
 
                 // Once published, return a server-assigned msg id
                 ApiFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
